@@ -1,7 +1,7 @@
 "use strict"
-
+//Home Work - Converter
 // converter km to m
-let unit = "km", amount = 10;
+/*let unit = "km", amount = 10;
 
     switch (unit) {
         case "km":
@@ -50,4 +50,22 @@ switch (unit) {
         break;
     default :
         console.log("unit is unknown");
+}*/
+
+// Home Work - Years
+let year = prompt("Введіть вік :", "18");
+
+if (year >= 0) {
+    if (year % 10 === 1 && year != 11) {
+        console.log(year + " рік.");
+    } else {
+        if (year % 10 === 2 || year % 10 === 3 || year % 10 === 4) {
+            console.log(year + " роки.");
+        } else {
+            console.log(year + " років.");
+        }
+    }
+}
+else {
+    console.log("Year can't be negative");
 }
