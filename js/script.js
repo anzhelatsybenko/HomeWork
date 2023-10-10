@@ -59,7 +59,7 @@ if (year >= 0) {
     if (year % 10 === 1 && year != 11) {
         console.log(year + " рік.");
     } else {
-        if (year % 10 === 2 || year % 10 === 3 || year % 10 === 4) {
+        if ((year % 10 === 2 || year % 10 === 3 || year % 10 === 4) && (year != 12) && (year != 13) && (year != 14)) {
             console.log(year + " роки.");
         } else {
             console.log(year + " років.");
