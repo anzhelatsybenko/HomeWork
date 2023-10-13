@@ -1,71 +1,47 @@
 "use strict"
-//Home Work - Converter
-// converter km to m
-/*let unit = "km", amount = 10;
+//----------Home Work - Triangle----------
 
-    switch (unit) {
-        case "km":
-            console.log(amount + " " + unit + " is" + " " + amount*1000 + " m")
-            break
-        case 'h':
-            console.log(amount + " " + unit + " is" + " " + amount*60 + " min");
-            break;
-        case 'kg':
-            console.log(amount + " " + unit + " is" + " " + amount*1000 + " g");
-            break;
-        default :
-            console.log("unit is unknown");
-    }
-
-
-//converter hours to minutes
-unit = "h", amount = 1;
-
-switch (unit) {
-    case "km":
-        console.log(amount + " " + unit + " is" + " " + amount*1000 + " m")
-        break
-    case 'h':
-        console.log(amount + " " + unit + " is" + " " + amount*60 + " min");
-        break;
-    case 'kg':
-        console.log(amount + " " + unit + " is" + " " + amount*1000 + " g");
-        break;
-    default :
-        console.log("unit is unknown");
-}
-
-//converter kg to g
-unit = "kg", amount = 1;
-
-switch (unit) {
-    case "km":
-        console.log(amount + " " + unit + " is" + " " + amount*1000 + " m")
-        break
-    case 'h':
-        console.log(amount + " " + unit + " is" + " " + amount*60 + " min");
-        break;
-    case 'kg':
-        console.log(amount + " " + unit + " is" + " " + amount*1000 + " g");
-        break;
-    default :
-        console.log("unit is unknown");
-}*/
-
-// Home Work - Years
-let year = prompt("Введіть вік :", "18");
-
-if (year >= 0) {
-    if (year % 10 === 1 && year != 11) {
-        console.log(year + " рік.");
-    } else {
-        if ((year % 10 === 2 || year % 10 === 3 || year % 10 === 4) && (year != 12) && (year != 13) && (year != 14)) {
-            console.log(year + " роки.");
-        } else {
-            console.log(year + " років.");
-        }
+// Version 1 - with "for"
+/*function triangle_v1 (heigt, symbol){
+    let s = symbol;
+    for (let i = 1; i<=heigt; i++) {
+            console.log(symbol);
+            symbol = symbol + s;
     }
 }
-else {
-    console.log("Year can't be negative");
+
+triangle_v2(5,"+");*/
+
+// Version 2 - with "while"
+/*function triangle_v1 (heigt, symbol){
+    let s = symbol;
+    let i = 1;
+    while (i<=heigt) {
+        console.log(symbol);
+        symbol = symbol + s;
+        i++;
+    }
 }
+
+triangle_v2(5,"+");*/
+
+
+//----------Home Work - Summary----------
+/*function summary () {
+    let sum = 0;
+    for (let i = 1; i <= 100; i++) {
+        if (i%3) sum = sum + i;
+    }
+    return sum;
+}
+console.log(summary ());*/
+
+//----------Home Work - Pow----------
+function pow (numb, pow) {
+    let n = numb;
+    for (let i = 1; i < pow; i++) {
+        numb = numb*n;
+    }
+    return numb;
+}
+console.log(pow (3,2));
