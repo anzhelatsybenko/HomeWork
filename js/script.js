@@ -1,8 +1,8 @@
 "use strict"
 //----------Home Work - Triangle----------
 
-// Version 1 - with "for"
-/*function triangle_v1 (heigt, symbol){
+// --Version 1 - with "for"--
+function triangle_v1 (heigt, symbol){
     let s = symbol;
     for (let i = 1; i<=heigt; i++) {
             console.log(symbol);
@@ -10,10 +10,10 @@
     }
 }
 
-triangle_v2(5,"+");*/
+triangle_v1(5,"+");
 
-// Version 2 - with "while"
-/*function triangle_v1 (heigt, symbol){
+// --Version 2 - with "while"--
+/*function triangle_v2 (heigt, symbol){
     let s = symbol;
     let i = 1;
     while (i<=heigt) {
@@ -24,7 +24,6 @@ triangle_v2(5,"+");*/
 }
 
 triangle_v2(5,"+");*/
-
 
 //----------Home Work - Summary----------
 /*function summary () {
@@ -37,11 +36,11 @@ triangle_v2(5,"+");*/
 console.log(summary ());*/
 
 //----------Home Work - Pow----------
-function pow (numb, pow) {
+/*function pow (numb, pow) {
     let n = numb;
     for (let i = 1; i < pow; i++) {
         numb = numb*n;
     }
     return numb;
 }
-console.log(pow (3,2));
+console.log(pow (3,2));*/
