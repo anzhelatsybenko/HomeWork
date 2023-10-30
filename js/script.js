@@ -1,76 +1,90 @@
 "use strict"
-//----------Home Work - GetInfo()----------
+//----------Home Work - myBlend----------
 
-var legoset = {
-    NameOfSet: "4 Privet Drive",
-    NameOfCollection: "Harry Potter",
-    NumberOfPieces: '797',
-    GetInfo() {
-        for (let key in legoset) {
-            console.log(key + ': ' + legoset[key]);
-        }
-    }
+/*var arr = [1,2,3,4,5,6,7,8,9];
+
+function myBlend(arr) {
+    arr.sort(() => {
+        return Math.random()-0.5
+    });
 }
+myBlend (arr);
+console.log("Affter my sort: " + arr);*/
 
-console.log (" ");
-legoset.GetInfo();
-
-legoset.NewProperty = "New property";
-
-console.log (" ");
-legoset.GetInfo();
-
-//----------Home Work - Services----------
-
-/*var services = {
-    haircut: "60 euro",
-    shaving: "80 euro",
-    shampooing: "100 euro",
-    price() {
-        var sum = 0;
-        for (let key in services) {
-            if (key === "price" || key === "minPrice" || key === "maxPrice") continue;
-            else sum = sum + Number(services[key].slice(0,services[key].indexOf(" ")));
+//----------Home Work - BigBoss----------
+const company = {
+    name: 'Велика Компанія',
+    type:'Головна компанія',
+    platform: 'Платформа для продажу квитків',
+    sellsSolution: 'Рішення для продажу квитків',
+    clients: [
+        {
+            name: 'Клієнт 1',
+            type: 'subCompany',
+            uses: 'ПО для продажу квитків',
+            sells: 'Рішення для продажу квитків',
+            partners: [
+                 {
+                    name: 'Клієнт 1.1',
+                    type: 'subSubCompany',
+                    uses: 'Рішення для продажу квитків',
+                    sells: 'Рішення для продажу квитків',
+                },
+                {
+                    name: 'Клієнт 1.2',
+                    type: 'subSubCompany',
+                    uses: 'Рішення для продажу квитків',
+                    sells: 'Рішення для продажу квитків',
+                    partners: [
+                        {
+                            name: 'Клієнт 1.2.3',
+                            type: 'subSubCompany',
+                            uses: 'Рішення для продажу квитків',
+                            sells: 'Рішення для продажу квитків',
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'Клієнт 2',
+            type: 'subCompany',
+            uses: 'ПО для продажу квитків',
+            sells: 'Рішення для продажу квитків'
         }
-        return sum;
-    },
-    minPrice () {
-        var min = Number(services.haircut.slice(0, services.haircut.indexOf(" ")));
-        for (let key in services) {
-            if (key === "price" || key === "minPrice" || key === "maxPrice") continue;
-            else {
-                if (Number(services[key].slice(0, services[key].indexOf(" "))) < min) {
-                    min = Number(services[key].slice(0, services[key].indexOf(" ")));
+    ]
+};
+
+function findValueByKey (nameCompany) {
+    let arr = [];
+
+    //With static data
+    //arr = company.clients.concat(company.clients[0].partners, company.clients[0].partners[1].partners);
+
+    //With dynamic data
+    arr = arr.concat (company, company.clients);
+    for (let i in company.clients) {
+        for (let j in company.clients[i]) {
+            if (Array.isArray(company.clients[i][j])) {
+                arr = arr.concat(company.clients[i][j]);
+                let temp = company.clients[i][j];
+                for (let k in temp) {
+                    for (let q in temp[k]) {
+                        if (Array.isArray(temp[k][q])) {
+                            arr = arr.concat(temp[k][q]);
+                        }
+                    }
                 }
             }
         }
-        return min;
-    },
-    maxPrice () {
-        var max = Number(services.haircut.slice(0, services.haircut.indexOf(" ")));
-        for (let key in services) {
-            if (key === "price" || key === "minPrice" || key === "maxPrice") continue;
-            else {
-                if (Number(services[key].slice(0, services[key].indexOf(" "))) > max) {
-                    max = Number(services[key].slice(0, services[key].indexOf(" ")));
-                }
-            }
-        }
-        return max;
+    }
+    console.log(nameCompany);
+    for (let i = 0; i <= arr.length; i++)
+    {
+        if (arr[i].name == nameCompany)  console.log(arr[i]);
+        else continue;
+
     }
 }
 
-console.log (" ");
-console.log ("Before adding a new property");
-console.log ("Total price : "+services.price()+" euro");
-console.log ("Minimal price : "+services.minPrice()+" euro");
-console.log ("Maximum price : "+services.maxPrice()+" euro");
-
-services.manicure = "40 euro";
-services.pedicure = "200 euro";
-
-console.log (" ");
-console.log ("After adding a new property");
-console.log ("Total price : "+services.price()+" euro");
-console.log ("Minimal price : "+services.minPrice()+" euro");
-console.log ("Maximum price : "+services.maxPrice()+" euro");*/
+findValueByKey("Клієнт 1.2.3");
